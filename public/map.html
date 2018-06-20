@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <title>Map</title>
+    <script src = "https://code.jquery.com/jquery-3.3.1.js" integrity = "sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin = "anonymous"></script>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <style>
+	/* Always define the hight*/
+	#map{
+	    height:100%; 	 
+	}
+	html, body{
+	    height:100%;
+	    margin:0;
+	    padding:0;
+	}
+	#floating-panel {
+	    margin-left:80%;
+	    height:50%;
+	    position: absolute;
+	    top:25%;
+	    z-index: 5;
+	    background-color: rgb(0, 0, 0, 0.5);
+	    padding: 5px;
+	    border: 1px solid #999;
+	    text-align: left;
+	    font-family: 'Roboto','sans-serif';
+       }
+    </style>
+</head>
+<body>
+    <div id="floating-panel">
+	違停歷史統計<br>
+	<input id="address" type="textbox" value="台南">
+    	<input id="submit" type="button" value="定位"><br>
+	汽車<input id="car" type="checkbox" name="illegal parking" value="show">
+	機車<input id="motor" type="checkbox" value="show"><br>
+    	<br>
+	違停預測<br>
+	<input id="adr" type="textbox" value="輸入地點"><br><br>
+	<input id="date" type="date">
+	<select id="day" name="day-set">
+	    <option id="1">一</option>
+	    <option id="2">二</option>
+	    <option id="3">三</option>
+	    <option id="4">四</option>
+	    <option id="5">五</option>
+	    <option id="6">六</option>
+	    <option id="0">日</option>
+	</select><br><br>
+	<input id="time" type="time"><br>
+	<br>
+	<button id="select">預測</button>
+	<br>
+	<p id="level"></p>
+    </div>
+    <div id="map"></div>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCT5yGQPKEExmtmUODhGlMW3C_wQn5oIsg&libraries=geometry,places&callback=initMap"></script>
+    <script src="map.js"></script>
+</body>
+</html>
